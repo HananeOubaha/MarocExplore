@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('destinations', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('accommodation');
+            $table->foreignId('itinerary_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
